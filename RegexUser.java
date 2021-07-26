@@ -8,7 +8,7 @@ public class RegexUser {
 		String regex_for_LastName = "^[a-zA-Z]{0,10}";
 		String regex_for_Email = "^[a-zA-Z0-9+.-]+@[a-zA-Z0-9.]+$";
 		String regex_for_mobileNumber = "^[0-9+ ]{0,3}[0-9]{0,10}";
-		String regex_for_Password = "(?=.*[A-Z])[A-Za-z0-9@_#$%!]{8,}";
+		String regex_for_Password = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
 
 		Pattern pattern = Pattern.compile(regex_for_name);
 		Matcher matcher = pattern.matcher("Ishu");
@@ -23,10 +23,11 @@ public class RegexUser {
 		Matcher matcher3 = pattern3.matcher("91 9346779142");
 
 		Pattern pattern4 = Pattern.compile(regex_for_Password);
-		Matcher matcher4 = pattern4.matcher("is#65U8@");
+		Matcher matcher4 = pattern4.matcher("Iks@l9A#B");
 
 		System.out.println("FirstName Valid : " + matcher.matches());
 		System.out.println("LastName Valid : " + matcher1.matches());
+
 		System.out.println("Email Valid : " + matcher2.matches());
 		System.out.println("Mobile number is Valid : " + matcher3.matches());
 		System.out.println("Password Valid : " + matcher4.matches());
