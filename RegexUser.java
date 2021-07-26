@@ -8,6 +8,7 @@ public class RegexUser {
 		String regex_for_name = "^[a-zA-Z]{0,6}";
 		String regex_for_LastName =  "^[a-zA-Z]{0,10}";
 		String regex_for_Email = "^[a-zA-Z0-9+.-]+@[a-zA-Z0-9.]+$" ;
+		String regex_for_mobileNumber = "^[0-9+ ]{0,3}[0-9]{0,10}";
 		
 		Pattern pattern = Pattern.compile(regex_for_name);
 		Matcher matcher = pattern.matcher("Ishu");
@@ -18,11 +19,17 @@ public class RegexUser {
 		Pattern pattern2 = Pattern.compile(regex_for_Email);
 		Matcher matcher2 = pattern2.matcher("ishuks9@gmail.com");
 		
+		Pattern pattern3 = Pattern.compile(regex_for_mobileNumber);
+		Matcher matcher3 = pattern3.matcher("91 9346779142");
+		
 		System.out.println("FirstName Valid : " +matcher.matches());
 		System.out.println("LastName Valid : " +matcher1.matches());
 		System.out.println("Email Valid : " +matcher2.matches());
+		System.out.println("Mobile number is Valid : "+matcher3.matches());
 		
 		
 		
 		}
-	}
+	
+
+}
